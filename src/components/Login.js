@@ -13,13 +13,14 @@ const Login = () => {
     //validate form data
     const message = checkValidData(fullname.current.value,email.current.value, password.current.value);
     seterrorMessage(message); 
+    if(message) return;
 
-    // console.log(message);
-    console.log(fullname.current.value)
-    console.log(email.current.value);
-    console.log(password.current.value);
+    //sign in /sign up
+if(!message){
+}
+   
   };
-  //togglefuntion for signin & signup
+  //togglefuntion for signin & signupy 
   const toggleSignInForm = () => {
     console.log("clicked");
     setisSignInForm(!isSignInForm);
