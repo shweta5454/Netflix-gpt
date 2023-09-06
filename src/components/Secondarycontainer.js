@@ -8,11 +8,10 @@ export const Secondarycontainer = () => {
     movies && (
       <div className=" bg-black ">
         <div className="-mt-52  pl-12 relative z-20">
-
-        <MovieList title={"Now Playing"} movies={movies?.nowPlayingmovies} />
-        <MovieList title={"Popular"} movies={movies?.popularmovies} />
-        <MovieList title={"Popular"} movies={movies?.nowPlayingmovies} />
-        <MovieList title={"Comedy"} movies={movies?.nowPlayingmovies} />
+          <MovieList title={"Now Playing"} movies={movies?.nowPlayingmovies} />
+          <MovieList title={"Popular"} movies={movies?.popularmovies} />
+          <MovieList title={"Top-rated"} movies={movies?.topratedvideos} />
+          <MovieList title={"Upcoming"} movies={movies?.upcomingvideos} />
         </div>
         {/**
          * MovieList-Popular

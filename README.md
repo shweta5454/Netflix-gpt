@@ -26,6 +26,10 @@
 -Update Store with Trailor Video Data
 -Embeded the Youtube video and make it utoplay and mute
 -Tailwind Classes to make Maincontainer look awesome
+-Build Secondary Component
+-Build Movie List
+-build movie Card
+
 
 
 

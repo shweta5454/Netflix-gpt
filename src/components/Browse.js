@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import useNowPlayingMovies from "../hooks/useNowplayingMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
-
+import useTopratedMovies from "../hooks/useTopratedMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import Header from "../components/Header";
 import Maincontainer from "./Maincontainer";
 import { Secondarycontainer } from "./Secondarycontainer";
@@ -9,6 +10,8 @@ import { Secondarycontainer } from "./Secondarycontainer";
 const Browse = () => {
   useNowPlayingMovies();
   usePopularMovies();
+  useTopratedMovies();
+  useUpcomingMovies();
   return (
     <div>
       <Header />
