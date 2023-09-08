@@ -9,8 +9,7 @@ import {
 } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import {BACKGROUND_IMG,PHOTOURL} from "../utils/constants";
-
+import { BACKGROUND_IMG, PHOTOURL } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setisSignInForm] = useState(true);
@@ -41,12 +40,11 @@ const Login = () => {
           console.log(user);
           updateProfile(user, {
             displayName: fullname.current.value,
-            photoURL:PHOTOURL
-              ,
+            photoURL: PHOTOURL,
           })
             .then(() => {
               // Profile updated!
-              const { uid, email, displayName, photoURL } = auth.currentUser ;
+              const { uid, email, displayName, photoURL } = auth.currentUser;
               dispatch(
                 addUser({
                   uid: uid,
@@ -55,7 +53,7 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-            }) 
+            })
             .catch((error) => {
               // An error occurred
               seterrorMessage(error.message);
@@ -95,15 +93,16 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
+          className="h-screen object-cover md:h-auto"
           src={BACKGROUND_IMG}
           alt="background_img"
         />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="relative w-3/12 left-0 right-0 top-36 mx-auto p-12 bg-black opacity-80 text-white rounded-lg"
+        className="relative  md:w-3/12 left-0 right-0 top-24 md:top-36 mx-auto p-12 bg-black opacity-80 text-white rounded-lg"
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-xl md:text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (

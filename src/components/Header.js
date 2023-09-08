@@ -17,7 +17,6 @@ const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
 
-
   //signOut code
   const handleSignOut = () => {
     signOut(auth)
@@ -66,12 +65,12 @@ const Header = () => {
     dispatch(changeLanguage(e.target.value));
   };
   return (
-    <div className="absolute flex justify-between w-full  z-10 px-8 py-2 bg-gradient-to-b from-black">
-      <img className="w-44" src={LOGO} alt="Logo" />
+    <div className="absolute flex flex-col md:flex-row md:justify-between w-full  z-10 px-8 py-2 bg-black md:bg-gradient-to-b from-black ">
+      <img className="w-44 mx-auto md:mx-0 " src={LOGO} alt="Logo" />
       {user && (
-        <div className="p-2 flex items-center ">
+        <div className=" md:p-2 flex justify-between items-center    ">
           <select
-            className="p-2 bg-gray-900 text-white m-2 "
+            className="p-2 md:px-8 bg-gray-900 text-white m-2 hidden md:block "
             onClick={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -82,18 +81,21 @@ const Header = () => {
           </select>
           {/*GPT SEARCH BUTTON  */}
           <button
-            className="py-2 px-4 m-2 mx-4  bg-purple-800 text-white rounded-lg "
+            className="py-2 px-4 m-2 mx-4 text-sm md:text-lg bg-purple-800 text-white rounded-lg "
             onClick={handleGptSearchClick}
           >
             GPT SEARCH
           </button>
           <img
-            className="w-8 h-8  mr-1 "
+            className="w-8 h-8  mr-1 hidden md:block"
             src={user?.photoURL}
             alt="myicon_url"
           />
-          <button className="text-white font-bold" onClick={handleSignOut}>
-            (Sign Out)
+          <button
+            className="text-white font-bold text-sm md:text-xl"
+            onClick={handleSignOut}
+          >
+            Sign Out
           </button>
         </div>
       )}

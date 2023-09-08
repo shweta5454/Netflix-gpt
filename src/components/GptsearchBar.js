@@ -48,19 +48,19 @@ const GptsearchBar = () => {
     console.log(tmdbResults);
   };
   return (
-    <div className="pt-[10%] ">
+    <div className="pt-[45%] md:pt-[10%] ">
       <form
-        className="w-1/2 mx-auto bg-black grid grid-cols-12"
+        className=" w-full md:w-1/2 mx-auto bg-black grid grid-cols-12"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
-          className="p-4 m-4 col-span-9"
+          className="p-4 m-4  md:p-2 md:m-2 col-span-9"
           placeholder={lang[langKey].gptSearcgPlaceholder}
         />
         <button
-          className="py-2 px-4 col-span-3 m-4 bg-red-700 text-white rounded-lg"
+          className="  m-4 py-2  col-span-3  bg-red-700 text-white rounded-lg"
           onClick={handleGptSearchClick}
         >
           {lang[langKey].search}
